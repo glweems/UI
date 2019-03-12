@@ -5,8 +5,14 @@
   src: local("Averta"), url("../fonts/Averta.woff") format("woff");
 }
 @font-face {
-  font-family: "Averta\ Bold";
+  font-family: "Averta";
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   src: local("Averta-Bold"), url("../fonts/Averta\ Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Averta";
+  font-style: italic;
+  font-weight: black;
+  src: local("Averta-Bold"), url("../fonts/Averta\ Black\ Italic.woff") format("woff");
 }
