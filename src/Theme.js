@@ -12,7 +12,7 @@ const size = {
   tablet: '768px',
   laptop: '1024px',
   laptopL: '1440px',
-  desktop: '2560px',
+  desktop: '2560px'
 };
 
 export const Device = {
@@ -24,7 +24,7 @@ export const Device = {
   laptopL: `(max-width: ${size.laptopL})`,
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
-  mobile: `(max-width: ${size.mobileL})`,
+  mobile: `(max-width: 400px)`,
 };
 export default {
   colors: {
@@ -38,6 +38,6 @@ export default {
     blue: '#3B4CCA',
   },
   shadow: {
-    'box-shadow': '0px 0px 22px #8b7d1d;',
+    'box-shadow': '0px 0px 22px #8b7d1d;'
   },
 };

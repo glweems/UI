@@ -4,11 +4,14 @@ import Theme, { Device } from './Theme';
 import Pokedex from './components/pokdex';
 import Sticky from './components/Sticky';
 import './scss/App.scss';
+// require(process.env().config);
+
+const frontEnd = {
+  login: 'https://priceless-albattani-5d7132.netlify.com/login/',
+  signup: 'https://priceless-albattani-5d7132.netlify.com/signup/'
+};
 
 const ThunderImg = require('./images/thunder.svg');
-
-// import { Container } from './components';
-// import Landing from "./components/Background";
 
 const Container = styled.div`
   width: 90%;
@@ -19,7 +22,7 @@ const Container = styled.div`
   background-color: ${Theme.colors.yellow};
 `;
 const Grid = styled.div`
-  margin-top: 4rem;
+  margin-top: 8rem;
   border: 10px solid black;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -37,8 +40,8 @@ const Nav = styled.div`
   grid-row: 1 / 2;
   grid-column: 1 / -1;
   text-align: right;
-  width: 100%;
-  padding: 0.5rem 0;
+  width: 95%;
+  padding: 1.5rem 0;
   /* margin: 1rem; */
 `;
 const Banner = styled.div`
@@ -50,7 +53,7 @@ const Banner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 2rem 0;
+  padding: 3rem 0;
   * {
     padding: 1rem 0;
   }
@@ -61,9 +64,6 @@ const Info = styled.div`
   grid-column: 1 / 7;
   display: flex;
   flex-direction: column;
-  button {
-    margin: 0 auto;
-  }
   justify-content: space-evenly;
   align-items: center;
   @media ${Device.mobile} {
@@ -88,7 +88,7 @@ const Graphic = styled.div`
   }
   @media ${Device.mobile} {
     * {
-      padding: 1rem 0.5rem;
+      padding: 3rem 2rem;
     }
     grid-column: 1 / -1;
     grid-row: 3/4;
@@ -110,28 +110,30 @@ const Title = styled.h1`
   margin-left: 1rem;
   padding: 0;
   @media ${Device.mobile} {
-    font-size: 16px;
+    font-size: 17px;
     font-size: 4vh;
   }
 `;
 
-const StartButton = styled.button`
+const GetStarted = styled.a`
   color: ${Theme.colors.light};
   background: ${Theme.colors.blue};
   font-size: 18px;
   text-transform: uppercase;
   font-family: 'Open Sans';
   font-weight: 300;
+  text-decoration: none;
   padding: 0.365rem 2rem;
   border-radius: 3px;
   border: none;
   display: flex;
+  flex-basis: 100%;
   margin: 0 auto;
 `;
 
 const LoginButton = styled.a`
   color: ${Theme.colors.dark};
-  margin: 0 0.5rem;
+  text-decoration: none;
 `;
 
 const Subtitle = styled.h4`
@@ -148,7 +150,7 @@ class App extends Component {
         <Container className="container">
           <Grid>
             <Nav>
-              <LoginButton>Login</LoginButton>
+              <LoginButton href={frontEnd.login}>Login</LoginButton>
             </Nav>
             <Banner className="banner">
               <TextWrapper>
@@ -165,7 +167,7 @@ class App extends Component {
                 </ul>
               </TextWrapper>
               <TextWrapper>
-                <StartButton>Get Started</StartButton>
+                <GetStarted href={frontEnd.signup}>Get Started</GetStarted>
               </TextWrapper>
             </Info>
             <Graphic className="graphic">
