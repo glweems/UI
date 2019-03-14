@@ -4,14 +4,10 @@ import Theme, { Device } from './Theme';
 import Pokedex from './components/pokdex';
 import Sticky from './components/Sticky';
 import './scss/App.scss';
-// require(process.env().config);
-
-const frontEnd = {
-  login: 'https://priceless-albattani-5d7132.netlify.com/login/',
-  signup: 'https://priceless-albattani-5d7132.netlify.com/signup/'
-};
 
 const ThunderImg = require('./images/thunder.svg');
+
+const frontEnd = 'https://priceless-albattani-5d7132.netlify.com/';
 
 const Container = styled.div`
   width: 90%;
@@ -150,7 +146,7 @@ class App extends Component {
         <Container className="container">
           <Grid>
             <Nav>
-              <LoginButton href={frontEnd.login}>Login</LoginButton>
+              <LoginButton href={frontEnd}>Login</LoginButton>
             </Nav>
             <Banner className="banner">
               <TextWrapper>
@@ -167,7 +163,7 @@ class App extends Component {
                 </ul>
               </TextWrapper>
               <TextWrapper>
-                <GetStarted href={frontEnd.signup}>Get Started</GetStarted>
+                <GetStarted href={frontEnd}>Get Started</GetStarted>
               </TextWrapper>
             </Info>
             <Graphic className="graphic">
